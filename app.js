@@ -1,6 +1,6 @@
 require('colors');
 
-const { inquirerMenu } = require('./helpers/inquirer');
+const { inquirerMenu, pausa } = require('./helpers/inquirer');
 
 // const { mostrarMenu, pausa } = require('./helpers/mensajes');
 
@@ -15,10 +15,12 @@ const main = async () => {
         opt = await inquirerMenu();
         console.log({opt});
 
+        //await pausa() -> Presione ${'ENTER'.green} para continuar`
+
     
     } while (opt !== '0');
 
-    // pausa()
+    await pausa()
 }
 
 main();
