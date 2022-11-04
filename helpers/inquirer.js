@@ -12,31 +12,31 @@ const preguntas = [
         choices: [
             {
                 value: '1',
-                name: '1.Crear tarea'
+                name: `${'1.'.green} Crear tarea`
             },
             {
                 value: '2',
-                name: '2.Mostrar tareas'
+                name: `${'2.'.green} Mostrar tareas`
             },
             {
                 value: '3',
-                name: '3.Mostrar tareas completadas'
+                name: `${'3.'.green} Mostrar tareas completadas`
             },
             {
                 value: '4',
-                name: '4.Mostrar tarea pendientes'
+                name: `${'4.'.green} Mostrar tarea pendientes`
             },
             {
                 value: '5',
-                name: '5.Completar tarea(s) '
+                name: `${'5.'.green} Completar tarea(s) `
             },
             {
                 value: '6',
-                name: '6.Eliminar tarea'
+                name: `${'6.'.green} Eliminar tarea`
             },
             {
                 value: '0',
-                name: '0.Salir'
+                name: `${'0.'.green} Salir`
             },
         ]
     }
@@ -45,13 +45,16 @@ const preguntas = [
 const inquirerMenu = async () => {
     
     console.log('==========================='.green)
-    console.log('   Selecciona una opción'.green)
+    console.log('   Selecciona una opción'.white)
     console.log('===========================\n'.green)
 
     const {opcion} = await inquirer.prompt(preguntas);
     return opcion;
 }
 
+/**
+ * It waits for the user to press enter before continuing.
+ */
 const pausa = async() => {
 
     const question = [
@@ -65,6 +68,11 @@ const pausa = async() => {
     await inquirer.prompt(question);
 }
 
+/**
+ * It's a function that returns a promise that resolves to the value of the input field.
+ * @param message - The message that will be displayed to the user.
+ * @returns The value of the input.
+ */
 const leerInput = async (message) => {
 
     const question = [
