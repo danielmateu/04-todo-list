@@ -16,12 +16,34 @@ const mostrarMenu = () => {
     console.log(`${'5.'.green} Completar tarea(s) `)
     console.log(`${'6.'.green} Eliminar tarea`)
     console.log(`${'0.'.green} Salir \n`)
-    
-    
 
+    const readline = require('readline').createInterface({
+        input: process.stdin,
+        output: process.stdout
+    });
+
+    readline.question('Selecciona una opción:', (opt) => {
+
+        readline.close();
+    });
+
+}
+
+const pausa = () => {
+            
+    const readline = require('readline').createInterface({
+        input: process.stdin,
+        output: process.stdout
+    });
+
+    readline.question(`\nPresione ${'ENTER'.green} para continuar`, (opt) => {
+        
+        readline.close();
+    });
 }
 
 module.exports = {
     mostrarMenu,
+    pausa,
 } 
     
