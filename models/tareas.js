@@ -22,10 +22,13 @@ class Tareas {
         this._listado = {}
     }
 
-    cargarTareasFromAway(tareas = []){
+    cargarTareasFromArray(tareas = []){
 
-        this._listado[tarea.id] = tarea;
-        
+        /* Iterating over the array and adding the values to the object. */
+        tareas.forEach( tarea => {
+            this._listado[tarea.id] = tarea; 
+        });
+
     }
 
     /**

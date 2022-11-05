@@ -5,8 +5,6 @@ const { inquirerMenu, pausa, leerInput } = require('./helpers/inquirer');
 const Tarea = require('./models/tarea');
 const Tareas = require('./models/tareas');
 
-
-
 // const { mostrarMenu, pausa } = require('./helpers/mensajes');
 
 const main = async () => {
@@ -16,11 +14,13 @@ const main = async () => {
 
     const tareasDb = leerDb();
 
-    if(tareasDb){
+    if(tareasDb){  //cargar tareas
         //Establecer las tareas
+        //Cargar tareas
+        tareas.cargarTareasFromArray(tareasDb);
     }
 
-    await pausa();
+    // await pausa();
 
     do {
         opt = await inquirerMenu();
@@ -39,7 +39,7 @@ const main = async () => {
                 break;
         }
 
-        // guardarDB( tareas.listadoArr );
+        guardarDB( tareas.listadoArr );
         //await pausa() -> Presione ${'ENTER'.green} para continuar`
         await pausa()
 
