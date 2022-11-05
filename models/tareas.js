@@ -1,8 +1,6 @@
 const Tarea = require("./tarea");
-
-
 class Tareas {
-    
+
     _listado = {};
 
     get listadoArr() {
@@ -22,6 +20,12 @@ class Tareas {
      */
     constructor() {
         this._listado = {}
+    }
+
+    cargarTareasFromAway(tareas = []){
+
+        this._listado[tarea.id] = tarea;
+        
     }
 
     /**

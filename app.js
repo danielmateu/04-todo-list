@@ -1,8 +1,11 @@
 require('colors');
 
+const { guardarDB, leerDb } = require('./helpers/guardarArchivo');
 const { inquirerMenu, pausa, leerInput } = require('./helpers/inquirer');
 const Tarea = require('./models/tarea');
 const Tareas = require('./models/tareas');
+
+
 
 // const { mostrarMenu, pausa } = require('./helpers/mensajes');
 
@@ -10,6 +13,14 @@ const main = async () => {
     // console.log('Hola mundo');
     let opt = ''
     const tareas = new Tareas();
+
+    const tareasDb = leerDb();
+
+    if(tareasDb){
+        //Establecer las tareas
+    }
+
+    await pausa();
 
     do {
         opt = await inquirerMenu();
@@ -27,6 +38,8 @@ const main = async () => {
             default:
                 break;
         }
+
+        // guardarDB( tareas.listadoArr );
         //await pausa() -> Presione ${'ENTER'.green} para continuar`
         await pausa()
 
