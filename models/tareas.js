@@ -76,7 +76,7 @@ class Tareas {
                 //Mostrar completadas
                 if(completadoEn){
                     contador ++;
-                    console.log(`${(contador +'.').green} ${desc} :: ${estado}`);
+                    console.log(`${(contador +'.').green} ${desc} :: ${(completadoEn).green}`);
                 }
             }else{
                 //Mostrar Pendientes
@@ -87,6 +87,18 @@ class Tareas {
 
             }
         })
+    }
+
+    completarTarea(){
+        console.log('completarTarea');
+    }
+
+    eliminarTarea(id = ''){
+        console.log('eliminarTarea');
+
+        if(this._listado[id]){
+            delete this._listado[id];
+        }
     }
 
 }
