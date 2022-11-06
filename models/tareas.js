@@ -94,7 +94,7 @@ class Tareas {
     }
 
     eliminarTarea(id = ''){
-        console.log('eliminarTarea');
+        // console.log('eliminarTarea');
 
         if(this._listado[id]){
             delete this._listado[id];
