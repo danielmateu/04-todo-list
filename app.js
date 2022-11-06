@@ -29,13 +29,23 @@ const main = async () => {
 
         switch (opt) {
             case '1':
+                /* Asking the user to input a description. */
                 const desc = await leerInput('Descripción: ');
+                /* Creating a new task. */
                 tareas.crearTarea(desc);
                 break;
 
             case '2':
                 // console.log(tareas.listadoArr);
                 tareas.listadoCompleto();
+                break;
+
+            case '3':
+                tareas.tareasCompletadasPendientes(true)
+                break;
+
+            case '4':
+                tareas.tareasCompletadasPendientes(false);
                 break;
 
             default:
